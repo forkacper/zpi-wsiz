@@ -17,3 +17,6 @@ if (!$conn) {
 
 defined("TEMPLATES")
 or define("TEMPLATES", realpath(dirname(__FILE__) . '/resources/templates'));
+
+defined("SRC")
+or define("SRC", realpath(dirname(__FILE__) . '/resources/src'));

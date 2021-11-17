@@ -1,5 +1,6 @@
 <?php
 require('config.php');
+require(SRC . '/login/auth.php');
 
 require_once(TEMPLATES . '/header.php');
 require_once(TEMPLATES . '/navbar.php');

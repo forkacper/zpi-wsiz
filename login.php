@@ -5,7 +5,7 @@ require_once(TEMPLATES . '/header.php');
 
 ?>
 
-    <div class="login-header box-shadow">
+ <!--   <div class="login-header box-shadow">
         <div class="container-fluid d-flex justify-content-between align-items-center">
             <div class="brand-logo">
                 <a href="login.php">
@@ -13,7 +13,7 @@ require_once(TEMPLATES . '/header.php');
                 </a>
             </div>
         </div>
-    </div>
+    </div>-->
     <div class="login-wrap d-flex align-items-center flex-wrap justify-content-center">
         <div class="container">
             <div class="row align-items-center">

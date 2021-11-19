@@ -10,7 +10,7 @@ if (isset($_POST['username'])) {
     $password = mysqli_real_escape_string($conn, $password);
 
     //Checking is user existing in the database or not
-    $query = "SELECT * FROM `user` WHERE user_name='$username' and user_password='" . md5($password) . "'";
+    $query = "SELECT * FROM `users` WHERE username='$username' and password='" . md5($password) . "'";
     $result = mysqli_query($conn, $query);
 
     $rows = mysqli_num_rows($result);

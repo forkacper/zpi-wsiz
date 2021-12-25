@@ -11,7 +11,7 @@ require_once("src/Database.php");
 
 class Controller
 {
-    private const DEFAULT_ACTION = 'list';
+    private const DEFAULT_ACTION = 'dashboard';
 
     private static array $configuration = [];
 
@@ -33,32 +33,14 @@ class Controller
     public function run(): void
     {
         $viewParams = [];
+        $page = $this->getPage();
 
-        switch ($this->action()) {
-            case 'create':
-                $page = 'create';
-                $created = false;
-
-                $data = $this->getRequestPost();
-                if (!empty($data)) {
-                    $created = true;
-                    $viewParams = [
-                        'title' => $data['title'],
-                        'description' => $data['description']
-                    ];
-                }
-
-                $viewParams['created'] = $created;
-                break;
-            case 'show':
-                $viewParams = [
-                    'title' => 'Moja notatka',
-                    'description' => 'Opis'
-                ];
+        switch ($page) {
+            case 'page':
+                $page = "page";
                 break;
             default:
-                $page = 'list';
-                $viewParams['resultList'] = "wyświetlamy notatki";
+                $page = $page;
                 break;
         }
 
@@ -69,6 +51,12 @@ class Controller
     {
         $data = $this->getRequestGet();
         return $data['action'] ?? self::DEFAULT_ACTION;
+    }
+
+    private function getPage(): string
+    {
+        $data = $this->getRequestGet();
+        return $data['page'] ?? self::DEFAULT_ACTION;
     }
 
     private function getRequestGet(): array

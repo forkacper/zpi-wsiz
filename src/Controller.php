@@ -67,7 +67,7 @@ class Controller
                 $page = 'myVehicle';
                 break;
             default:
-                $page = $page;
+                $page = 'dashboard';
                 break;
         }
 

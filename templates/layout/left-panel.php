@@ -24,7 +24,7 @@
                         <span class="micon dw dw-bar-chart-1"></span><span class="mtext">Zlecenia</span>
                     </a>
                     <ul class="submenu">
-                        <li><a href="?page=newOrder">Dodaj nowe zlecenie</a></li>
+                        <li><a href="?page=addNewOrder">Dodaj nowe zlecenie</a></li>
                         <li><a href="?page=pendingOrders">Zlecenia oczekujące</a></li>
                         <li><a href="?page=ordersInProgress">Zlecenia w realizacji</a></li>
                         <li><a href="?page=completedOrders">Zlecenia zakończone</a></li>
@@ -35,7 +35,7 @@
                         <span class="micon dw dw-bar-chart-1"></span><span class="mtext">Zlecenia</span>
                     </a>
                     <ul class="submenu">
-                        <li><a href="?page=newOrder">Zlecenia nowe</a></li>
+                        <li><a href="?page=newOrders">Zlecenia nowe</a></li>
                         <li><a href="?page=pendingOrders">Zlecenia w realizacji</a></li>
                         <li><a href="?page=completedOrders">Zlecenia zakończone</a></li>
                     </ul>

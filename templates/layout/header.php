@@ -3,7 +3,7 @@
 <head>
     <!-- Basic Page Info -->
     <meta charset="utf-8">
-    <title>TransZPI - Aplikacja do zarządzania transportem</title>
+    <title><?= ucfirst($page) ?> - Aplikacja do zarządzania transportem</title>
 
     <!-- Site favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="vendors/images/apple-touch-icon.png">

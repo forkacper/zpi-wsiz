@@ -24,10 +24,55 @@
                         <span class="micon dw dw-bar-chart-1"></span><span class="mtext">Zlecenia</span>
                     </a>
                     <ul class="submenu">
-                        <li><a href="index.html">Dashboard style 1</a></li>
-                        <li><a href="index2.html">Dashboard style 2</a></li>
-                        <li><a href="index3.html">Dashboard style 3</a></li>
+                        <li><a href="?page=newOrder">Dodaj nowe zlecenie</a></li>
+                        <li><a href="?page=pendingOrders">Zlecenia oczekujące</a></li>
+                        <li><a href="?page=ordersInProgress">Zlecenia w realizacji</a></li>
+                        <li><a href="?page=completedOrders">Zlecenia zakończone</a></li>
                     </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="javascript:;" class="dropdown-toggle">
+                        <span class="micon dw dw-bar-chart-1"></span><span class="mtext">Zlecenia</span>
+                    </a>
+                    <ul class="submenu">
+                        <li><a href="?page=newOrder">Zlecenia nowe</a></li>
+                        <li><a href="?page=pendingOrders">Zlecenia w realizacji</a></li>
+                        <li><a href="?page=completedOrders">Zlecenia zakończone</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="?page=drivers" class="dropdown-toggle no-arrow">
+                        <span class="micon dw dw-human-resources"></span><span class="mtext">Kierowcy</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="?page=routes" class="dropdown-toggle no-arrow">
+                        <span class="micon dw dw-road"></span><span class="mtext">Trasy</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="?page=vehicles" class="dropdown-toggle no-arrow">
+                        <span class="micon dw dw-delivery-truck-1"></span><span class="mtext">Pojazdy</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="?page=contractors" class="dropdown-toggle no-arrow">
+                        <span class="micon dw dw-conference"></span><span class="mtext">Kontrahenci</span>
+                    </a>
+                </li>
+                <li class="dropdown">
+                    <a href="javascript:;" class="dropdown-toggle">
+                        <span class="micon dw dw-bar-chart"></span><span class="mtext">Moje zlecenia</span>
+                    </a>
+                    <ul class="submenu">
+                        <li><a href="?page=pendingOrders">Zlecenia w realizacji</a></li>
+                        <li><a href="?page=completedOrders">Zlecenia zamknięte</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="?page=myVehicle" class="dropdown-toggle no-arrow">
+                        <span class="micon dw dw-delivery-truck-2"></span><span class="mtext">Mój samochód</span>
+                    </a>
                 </li>
             </ul>
         </div>

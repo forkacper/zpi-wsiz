@@ -36,8 +36,32 @@ class Controller
         $page = $this->getPage();
 
         switch ($page) {
-            case 'page':
-                $page = "page";
+            case 'newOrder':
+                $page = "newOrder";
+                break;
+            case 'pendingOrders':
+                $page = 'pendingOrders';
+                break;
+            case 'ordersInProgress':
+                $page = 'ordersInProgress';
+                break;
+            case 'completedOrders':
+                $page = 'completedOrders';
+                break;
+            case 'drivers':
+                $page = 'drivers';
+                break;
+            case 'routes':
+                $page = 'routes';
+                break;
+            case 'vehicles':
+                $page = 'vehicles';
+                break;
+            case 'contractors':
+                $page = 'contractors';
+                break;
+            case 'myVehicle':
+                $page = 'myVehicle';
                 break;
             default:
                 $page = $page;

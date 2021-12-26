@@ -36,8 +36,11 @@ class Controller
         $page = $this->getPage();
 
         switch ($page) {
-            case 'newOrder':
-                $page = "newOrder";
+            case 'newOrders':
+                $page = "newOrders";
+                break;
+            case 'addNewOrder':
+                $page = 'addNewOrder';
                 break;
             case 'pendingOrders':
                 $page = 'pendingOrders';

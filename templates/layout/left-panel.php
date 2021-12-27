@@ -74,6 +74,11 @@
                         <span class="micon dw dw-delivery-truck-2"></span><span class="mtext">Mój samochód</span>
                     </a>
                 </li>
+                <li>
+                    <a href="?page=chat" class="dropdown-toggle no-arrow">
+                        <span class="micon dw dw-chat-3"></span><span class="mtext">Czat</span>
+                    </a>
+                </li>
             </ul>
         </div>
     </div>

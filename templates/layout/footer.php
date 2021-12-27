@@ -15,5 +15,7 @@
 <script src="../../public/plugins/datatables/js/dataTables.responsive.min.js"></script>
 <script src="../../public/plugins/datatables/js/responsive.bootstrap4.min.js"></script>
 <script src="../../public/scripts/dashboard.js"></script>
+<!-- Datatable Setting js -->
+<script src="../../public/scripts/datatable-setting.js"></script></body>
 </body>
 </html>

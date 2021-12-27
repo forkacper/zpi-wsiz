@@ -66,6 +66,9 @@ class Controller
             case 'myVehicle':
                 $page = 'myVehicle';
                 break;
+            case 'chat':
+                $page = 'chat';
+                break;
             default:
                 $page = 'dashboard';
                 break;

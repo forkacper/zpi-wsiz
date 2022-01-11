@@ -2,17 +2,27 @@
 
 declare(strict_types=1);
 
-namespace App;
+spl_autoload_register(function (string $classNamespace) {
+    $path = str_replace(['\\', 'App/'], ['/', ''], $classNamespace);
+    $path = "src/$path.php";
+    require_once($path);
+});
 
 require_once("src/Utils/debug.php");
-require_once("src/Controller.php");
-
 $configuration = require_once("config/config.php");
 
-$request = [
-    'get' => $_GET,
-    'post' => $_POST
-];
+use App\Controller\AbstractController;
+use App\Controller\LoginController;
+use App\Controller\PageController;
+use App\Request;
 
-Controller::initConfiguration($configuration);
-(new Controller($request))->run();
+$request = new Request($_GET, $_POST, $_SERVER);
+
+AbstractController::initConfiguration($configuration);
+
+if(empty($_SESSION["authenticated"]) || $_SESSION["authenticated"] != 'true') {
+    (new LoginController($request))->loginAction();
+} else {
+    (new PageController($request))->run();
+}
+

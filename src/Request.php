@@ -9,12 +9,14 @@ class Request
     private array $get = [];
     private array $post = [];
     private array $server = [];
+    private array $session = [];
 
-    public function __construct(array $get, array $post, array $server)
+    public function __construct(array $get, array $post, array $server, array $session)
     {
         $this->get = $get;
         $this->post = $post;
         $this->server = $server;
+        $this->session = $session;
     }
 
     public function isPost(): bool

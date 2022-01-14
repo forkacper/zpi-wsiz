@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Model\LoginModel;
 use App\Request;
 use App\View;
 
@@ -14,6 +15,7 @@ abstract class AbstractController
 
     protected Request $request;
     protected View $view;
+    protected LoginModel $loginModel;
 
     public static function initConfiguration(array $configuration): void
     {
@@ -23,8 +25,10 @@ abstract class AbstractController
     public function __construct(Request $request)
     {
         if (empty(self::$configuration['db'])) {
-            throw new ConfigurationException('Configuration error');
+            // error to do
         }
+
+        $this->loginModel = new LoginModel(self::$configuration['db']);
 
         $this->request = $request;
         $this->view = new View();

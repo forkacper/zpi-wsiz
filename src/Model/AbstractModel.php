@@ -5,9 +5,6 @@ declare(strict_types=1);
 namespace App\Model;
 
 use PDO;
-use App\Exception\ConfigurationException;
-use App\Exception\StorageException;
-use PDOException;
 
 abstract class AbstractModel
 {
@@ -15,12 +12,8 @@ abstract class AbstractModel
 
     public function __construct(array $config)
     {
-        try {
-            $this->validateConfig($config);
+//            $this->validateConfig($config);
             $this->createConnection($config);
-        } catch (PDOException $e) {
-            throw new StorageException('Connection error');
-        }
     }
 
     private function createConnection(array $config): void
@@ -36,15 +29,15 @@ abstract class AbstractModel
         );
     }
 
-    private function validateConfig(array $config): void
-    {
-        if (
-            empty($config['database'])
-            || empty($config['host'])
-            || empty($config['user'])
-            || empty($config['password'])
-        ) {
-            throw new ConfigurationException('Storage configuration error');
-        }
-    }
+//    private function validateConfig(array $config): void
+//    {
+//        if (
+//            empty($config['database'])
+//            || empty($config['host'])
+//            || empty($config['user'])
+//            || empty($config['password'])
+//        ) {
+//            throw new ConfigurationException('Storage configuration error');
+//        }
+//    }
 }

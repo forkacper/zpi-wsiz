@@ -9,6 +9,7 @@ spl_autoload_register(function (string $classNamespace) {
 });
 
 session_start();
+
 require_once("src/Utils/debug.php");
 $configuration = require_once("config/config.php");
 
@@ -20,7 +21,7 @@ use App\Request;
 $request = new Request($_GET, $_POST, $_SERVER, $_SESSION);
 AbstractController::initConfiguration($configuration);
 
-if(empty($_SESSION["authenticated"]) || $_SESSION["authenticated"] != 'true') {
+if($request->isAuthenticated()) {
     (new LoginController($request))->loginAction();
 } else {
     (new PageController($request))->run();

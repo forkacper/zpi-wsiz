@@ -2,25 +2,12 @@
 
 namespace App\Model;
 
-class LoginModel extends AbstractModel implements ModelInterface
+use PDO;
+
+class LoginModel extends AbstractModel implements LoginInterface
 {
-    public function get(int $id): array
+    public function get(string $username, string $password): bool
     {
         // TODO: Implement get() method.
-    }
-
-    public function create(array $data): void
-    {
-        // TODO: Implement create() method.
-    }
-
-    public function edit(int $id, array $data): void
-    {
-        // TODO: Implement edit() method.
-    }
-
-    public function delete(int $id): void
-    {
-        // TODO: Implement delete() method.
     }
 }

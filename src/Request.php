@@ -19,6 +19,11 @@ class Request
         $this->session = $session;
     }
 
+    public function isAuthenticated(): bool
+    {
+       return empty($this->session['authenticated']) ? true : false;
+    }
+
     public function isPost(): bool
     {
         return $this->server['REQUEST_METHOD'] === 'POST';

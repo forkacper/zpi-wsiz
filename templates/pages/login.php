@@ -22,13 +22,13 @@
                         </div>
                         <form action="" method="POST" name="login">
                             <div class="input-group custom">
-                                <input type="text" class="form-control form-control-lg" name="username" placeholder="Nazwa użytkownika">
+                                <input type="text" class="form-control form-control-lg" value="" name="username" placeholder="Nazwa użytkownika">
                                 <div class="input-group-append custom">
                                     <span class="input-group-text"><i class="icon-copy dw dw-user1"></i></span>
                                 </div>
                             </div>
                             <div class="input-group custom">
-                                <input type="password" class="form-control form-control-lg" name="password" placeholder="**********">
+                                <input type="password" class="form-control form-control-lg" value="" name="password" placeholder="**********">
                                 <div class="input-group-append custom">
                                     <span class="input-group-text"><i class="dw dw-padlock1"></i></span>
                                 </div>

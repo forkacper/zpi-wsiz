@@ -9,7 +9,7 @@ class Request
     private array $get = [];
     private array $post = [];
     private array $server = [];
-    protected array $session = [];
+    private array $session = [];
 
     public function __construct(array $get, array $post, array $server, array $session)
     {

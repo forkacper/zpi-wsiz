@@ -2,7 +2,7 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-md-6 col-lg-7">
-                    <img src="vendors/images/login-page-img.png" alt="">
+                    <img src="../../public/images/login-page-graphic.png" alt="Grafika – strona logowania">
                 </div>
 
                 <div class="col-md-6 col-lg-5">

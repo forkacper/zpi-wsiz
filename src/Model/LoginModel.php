@@ -6,7 +6,7 @@ use PDO;
 
 class LoginModel extends AbstractModel implements LoginInterface
 {
-    public function getUser(string $username, string $password): bool
+    public function getUser(string $username, string $password): array
     {
         try {
             $username = $this->conn->quote($username);
@@ -25,7 +25,8 @@ class LoginModel extends AbstractModel implements LoginInterface
 
             $fetch = $result->fetchAll(PDO::FETCH_ASSOC);
 
-            return count($fetch) === 1 ? true : false;
+            return count($fetch) === 1 ? $fetch : [];
+
         } catch (\PDOException $e) {
             throw new \PDOException($e);
         }

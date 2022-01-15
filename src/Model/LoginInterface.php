@@ -6,5 +6,5 @@ namespace App\Model;
 
 interface LoginInterface
 {
-    public function getUser(string $username, string $password): bool;
+    public function getUser(string $username, string $password): array;
 }

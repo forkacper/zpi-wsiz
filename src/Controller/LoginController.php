@@ -22,14 +22,17 @@ class LoginController extends AbstractController
                 ];
             }
             else {
-                $validateUser = $this->loginModel->getUser($username, $password);
-                if(!$validateUser) {
+                $user = $this->loginModel->getUser($username, $password);
+                if(empty($user)) {
                     $params[] = [
                         'error' => 'Nieprawidłowa nazwa użytkownika lub hasło. Spróbuj jeszcze raz!'
                     ];
                 } else {
+                    $_SESSION['authenticated'] = true;
+                    $_SESSION['userName'] = $user[0]['username'];
+                    $_SESSION['profile'] = $user[0]['role'];
                     $params[] = [
-                        'success' => 'Pomyślnie zalogowano'
+                        'success' => 'Pomyślnie zalogowano użytkownika!'
                     ];
                     $this->view->render('dashboard', $params ?? []);
                 }

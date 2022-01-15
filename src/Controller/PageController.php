@@ -16,8 +16,14 @@ class PageController extends AbstractController
         $this->view->render('pendingOrders');
     }
 
-    public function ordersInProgress() {
-        $this->view->render('ordersInProgress');
+    public function logoutAction() {
+        // remove all session variables
+        session_unset();
+        // destroy the session
+        session_destroy();
+        $params[] = [
+            'success' => 'Pomyślnie wylogowano użytkownika'
+        ];
+        $this->view->render('login', $params);
     }
-
 }

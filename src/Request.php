@@ -9,7 +9,7 @@ class Request
     private array $get = [];
     private array $post = [];
     private array $server = [];
-    private array $session = [];
+    protected array $session = [];
 
     public function __construct(array $get, array $post, array $server, array $session)
     {
@@ -21,7 +21,7 @@ class Request
 
     public function isAuthenticated(): bool
     {
-       return empty($this->session['authenticated']) ? true : false;
+       return $this->session['authenticated'] ?? false;
     }
 
     public function isPost(): bool

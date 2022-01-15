@@ -21,7 +21,7 @@ use App\Request;
 $request = new Request($_GET, $_POST, $_SERVER, $_SESSION);
 AbstractController::initConfiguration($configuration);
 
-if($request->isAuthenticated()) {
+if(!$request->isAuthenticated()) {
     (new LoginController($request))->loginAction();
 } else {
     (new PageController($request))->run();

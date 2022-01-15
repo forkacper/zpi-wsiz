@@ -4429,6 +4429,10 @@ a.badge-dark.focus, a.badge-dark:focus {
   color: #202326; }
 
 .alert-success {
+  position: fixed;
+  left: 50%;
+  bottom: 5%;
+  transform: translate(-50%, -50%);
   color: #155724;
   background-color: #d4edda;
   border-color: #c3e6cb; }

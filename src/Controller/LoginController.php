@@ -11,25 +11,29 @@ class LoginController extends AbstractController
             $username = $this->request->postParam('username');
             $password = $this->request->postParam('password');
 
-            var_dump($_POST);
-
             if(empty($username)) {
-                $params = [
-                    'error' => 'Wprowadź login użytwkonika'
+                $params[] = [
+                    'error' => 'Wprowadź login użytkownika'
                 ];
             }
-            if(empty($password)) {
-                $params = [
-                    'error' => 'Wprowadź hasło użytwkonika'
+            else if(empty($password)) {
+                $params[] = [
+                    'error' => 'Wprowadź hasło użytkownika'
                 ];
             }
-
-            $loginData = [
-                'username' => $username,
-                'password' => $password
-            ];
-
-
+            else {
+                $validateUser = $this->loginModel->getUser($username, $password);
+                if(!$validateUser) {
+                    $params[] = [
+                        'error' => 'Nieprawidłowa nazwa użytkownika lub hasło. Spróbuj jeszcze raz!'
+                    ];
+                } else {
+                    $params[] = [
+                        'success' => 'Pomyślnie zalogowano'
+                    ];
+                    $this->view->render('dashboard', $params ?? []);
+                }
+            }
         }
 
         $this->view->render('login', $params ?? []);

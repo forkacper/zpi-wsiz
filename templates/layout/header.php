@@ -29,7 +29,7 @@
 						<span class="user-icon">
 							<img src="vendors/images/photo1.jpg" alt="">
 						</span>
-                    <span class="user-name">Użytkownik</span>
+                    <span class="user-name"><?= $_SESSION['userFullName'] ?></span>
                 </a>
                 <div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
                     <a class="dropdown-item" href="?action=logout"><i class="dw dw-logout"></i>Wyloguj się</a>

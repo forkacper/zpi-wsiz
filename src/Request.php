@@ -39,12 +39,17 @@ class Request
         return !empty($this->post);
     }
 
-    public function getParam(string $name, $default = null)
+    public function getSessionParams():array
+    {
+        return $this->session;
+    }
+
+    public function getParam(string $name, $default = null):?string
     {
         return $this->get[$name] ?? $default;
     }
 
-    public function postParam(string $name, $default = null)
+    public function postParam(string $name, $default = null):?string
     {
         return $this->post[$name] ?? $default;
     }

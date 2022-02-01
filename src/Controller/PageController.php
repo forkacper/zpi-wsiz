@@ -12,8 +12,12 @@ class PageController extends AbstractController
         $this->view->render('addNewOrder');
     }
 
-    public function pendingOrders() {
+    public function pendingOrdersAction() {
         $this->view->render('pendingOrders');
+    }
+
+    public function routesAction() {
+        $this->view->render('routes');
     }
 
     public function logoutAction() {

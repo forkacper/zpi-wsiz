@@ -19,7 +19,7 @@ class LoginModel extends AbstractModel implements LoginInterface
             FROM users
             WHERE username = $username 
                 AND password = '$password'
-        ";
+            ";
 
             $result = $this->conn->query($query);
 

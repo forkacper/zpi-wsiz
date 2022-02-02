@@ -19,6 +19,15 @@ class Request
         $this->session = $session;
     }
 
+    public function userInfo(): array {
+        return [
+          'userId' => (int)$this->session['userId'],
+          'userName' => (string)$this->session['userName'],
+          'userFullName' => (string)$this->session['userFullName'],
+          'userRole' => (int)$this->session['userRole']
+        ];
+    }
+
     public function isAuthenticated(): bool
     {
        return $this->session['authenticated'] ?? false;

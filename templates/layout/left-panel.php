@@ -26,6 +26,11 @@
                         <li><a href="?action=completedOrders">Zlecenia zakończone</a></li>
                     </ul>
                 </li>
+                <li>
+                    <a href="?action=loads" class="dropdown-toggle no-arrow">
+                        <span class="micon dw dw-human-resources"></span><span class="mtext">Ładunki</span>
+                    </a>
+                </li>
                 <li class="dropdown">
                     <a href="javascript:;" class="dropdown-toggle">
                         <span class="micon dw dw-bar-chart-1"></span><span class="mtext">Zlecenia</span>

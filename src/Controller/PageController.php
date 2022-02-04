@@ -45,6 +45,16 @@ class PageController extends AbstractController
     }
 
     public function editOrderAction() {
+        if($this->request->hasPost()) {
+            if(!empty($this->request->postParam('order_driver'))) {
+                $this->ordersModel->editOrder($this->request->getParam('id'), $this->request->postParam('order_driver'));
+            }
+            if(!empty($this->request->postParam('order_status'))) {
+                $this->ordersModel->editOrder($this->request->getParam('id'), 0, $this->request->postParam('order_status'));
+            }
+        }
+
+
         if($this->request->getParam('id')) {
             $params['user'] = $this->request->userInfo();
             $params['orders'] = $this->ordersModel->getOrderById($this->request->getParam('id'));

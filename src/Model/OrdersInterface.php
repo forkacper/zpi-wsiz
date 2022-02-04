@@ -10,7 +10,7 @@ interface OrdersInterface
     public function getInProgressOrders(string $userRole, int $userId): array;
     public function getCompletedOrders(string $userRole, int $userId): array;
     public function getOrderById(int $orderId): array;
-    public function editOrder(array $orderParams): array;
+    public function editOrder(int $orderId, int $userId, int $statusId): bool;
     public function getDriversToOrder(): array;
     public function getStatusesToOrder(int $orderId): array;
     public function deleteOrder(int $orderId): bool;

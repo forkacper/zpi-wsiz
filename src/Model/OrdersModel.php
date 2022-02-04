@@ -252,9 +252,31 @@ class OrdersModel extends AbstractModel implements OrdersInterface
         return $this->conn->query($sql)->fetch(PDO::FETCH_ASSOC);
     }
 
-    public function editOrder(array $orderParams): array
+    public function editOrder(int $orderId, int $userId = 0, int $statusId = 0): bool
     {
-        // TODO: Implement editOrder() method.
+        if($userId) {
+            $carId = "SELECT cars_id FROM users WHERE id = $userId;";
+            $carId = (int)$this->conn->query($carId)->fetchColumn();
+
+            $sql[] = "UPDATE orders SET `driver_id` = $userId, `status` = 2 WHERE id = $orderId";
+            $sql[] = "UPDATE cars SET `is_used` = 1 WHERE id = $carId";
+        }
+
+        if($statusId) {
+            $carId = "SELECT driver_id FROM orders WHERE id = $orderId;";
+            $carId = (int)$this->conn->query($carId)->fetchColumn();
+            $carId = "SELECT cars_id FROM users WHERE id = $carId;";
+            $carId = (int)$this->conn->query($carId)->fetchColumn();
+
+            $sql[] = "UPDATE orders SET `status` = $statusId WHERE id = $orderId";
+            $sql[] = "UPDATE cars SET `is_used` = 0 WHERE id = $carId";
+        }
+
+        foreach ($sql as $item) {
+            $this->conn->query($item);
+        }
+
+        return true;
     }
 
     public function deleteOrder(int $orderId): bool

@@ -52,6 +52,10 @@ class PageController extends AbstractController
             if(!empty($this->request->postParam('order_status'))) {
                 $this->ordersModel->editOrder($this->request->getParam('id'), 0, $this->request->postParam('order_status'));
             }
+
+            $params[] = [
+                'success' => 'Pomyślnie edytowno zamówienie!'
+            ];
         }
 
 

@@ -31,6 +31,11 @@
                         <span class="micon dw dw-human-resources"></span><span class="mtext">Ładunki</span>
                     </a>
                 </li>
+                <li>
+                    <a href="?action=routes" class="dropdown-toggle no-arrow">
+                        <span class="micon dw dw-road"></span><span class="mtext">Trasy</span>
+                    </a>
+                </li>
             </ul>
         </div>
     </div>

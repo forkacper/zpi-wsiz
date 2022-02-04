@@ -14,10 +14,10 @@ if($page === 'login') {
             require_once ('layout/left-panel-spedytor.php');
             break;
         case 'kierowca':
-            require_once ('layout/left-panel-kierowca.php.php');
+            require_once ('layout/left-panel-kierowca.php');
             break;
         case 'kontrahent':
-            require_once ('layout/left-panel-kontrahent.php.php');
+            require_once ('layout/left-panel-kontrahent.php');
             break;
         default:
             require_once ('layout/left-panel.php');

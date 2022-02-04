@@ -15,10 +15,11 @@ class LoginModel extends AbstractModel implements LoginInterface
             $password = md5($password);
 
             $query = "
-            SELECT *
+            SELECT users.id, users.username, users.password, users.lastname, users.firstname, users_role.name
             FROM users
+            INNER JOIN users_role ON users.id_role = users_role.id
             WHERE username = $username 
-                AND password = '$password'
+            AND password = '$password'
             ";
 
             $result = $this->conn->query($query);

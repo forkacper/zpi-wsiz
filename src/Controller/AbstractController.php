@@ -4,6 +4,8 @@ namespace App\Controller;
 
 use App\Model\LoginModel;
 use App\Model\LoadsModel;
+use App\Model\RoutesModel;
+use App\Model\OrdersModel;
 use App\Request;
 use App\View;
 
@@ -18,6 +20,7 @@ abstract class AbstractController
     protected View $view;
     protected LoginModel $loginModel;
     protected LoadsModel $loadsModel;
+    protected RoutesModel $routesModel;
 
     public static function initConfiguration(array $configuration): void
     {
@@ -32,6 +35,8 @@ abstract class AbstractController
 
         $this->loginModel = new LoginModel(self::$configuration['db']);
         $this->loadsModel = new LoadsModel(self::$configuration['db']);
+        $this->routesModel = new RoutesModel(self::$configuration['db']);
+        $this->ordersModel = new OrdersModel(self::$configuration['db']);
 
         $this->request = $request;
         $this->view = new View();

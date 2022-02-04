@@ -24,8 +24,12 @@ class Request
           'userId' => (int)$this->session['userId'],
           'userName' => (string)$this->session['userName'],
           'userFullName' => (string)$this->session['userFullName'],
-          'userRole' => (int)$this->session['userRole']
+          'userRole' => $this->session['userRole']
         ];
+    }
+
+    public function getUserId(): int {
+        return (int)$this->userInfo('userId');
     }
 
     public function isAuthenticated(): bool

@@ -32,7 +32,7 @@ class LoginController extends AbstractController
                     $_SESSION['userId'] = $user[0]['id'];
                     $_SESSION['userName'] = $user[0]['username'];
                     $_SESSION['userFullName'] = $user[0]['firstname'] . ' ' .$user[0]['lastname'];
-                    $_SESSION['userRole'] = $user[0]['role'];
+                    $_SESSION['userRole'] = $user[0]['name'];
                     $params[] = [
                         'success' => 'Pomyślnie zalogowano użytkownika!'
                     ];

@@ -20,7 +20,7 @@
                         <span class="micon dw dw-bar-chart"></span><span class="mtext">Moje zlecenia</span>
                     </a>
                     <ul class="submenu">
-                        <li><a href="?action=pendingOrders">Zlecenia w realizacji</a></li>
+                        <li><a href="?action=ordersInProgress">Zlecenia w realizacji</a></li>
                         <li><a href="?action=completedOrders">Zlecenia zamknięte</a></li>
                     </ul>
                 </li>

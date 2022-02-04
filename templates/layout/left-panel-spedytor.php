@@ -20,19 +20,14 @@
                         <span class="micon dw dw-bar-chart-1"></span><span class="mtext">Zlecenia</span>
                     </a>
                     <ul class="submenu">
-                        <li><a href="?action=newOrders">Zlecenia nowe</a></li>
-                        <li><a href="?action=pendingOrders">Zlecenia w realizacji</a></li>
+                        <li><a href="?action=pendingOrders">Zlecenia nowe</a></li>
+                        <li><a href="?action=ordersInProgress">Zlecenia w realizacji</a></li>
                         <li><a href="?action=completedOrders">Zlecenia zakończone</a></li>
                     </ul>
                 </li>
                 <li>
                     <a href="?action=drivers" class="dropdown-toggle no-arrow">
                         <span class="micon dw dw-human-resources"></span><span class="mtext">Kierowcy</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="?action=routes" class="dropdown-toggle no-arrow">
-                        <span class="micon dw dw-road"></span><span class="mtext">Trasy</span>
                     </a>
                 </li>
                 <li>

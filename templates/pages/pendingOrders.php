@@ -33,8 +33,8 @@
                                         <i class="dw dw-more"></i>
                                     </a>
                                     <div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
-                                        <?php if(!$params['user']['userRole'] == 'kontrahent'): ?>
-                                        <a class="dropdown-item" href="?action=editOrder"><i class="dw dw-edit2"></i> Edytuj</a>
+                                        <?php if($params['user']['userRole'] !== 'kontrahent'): ?>
+                                        <a class="dropdown-item" href="?action=editOrder&id=<?= $order['order_id']?>"><i class="dw dw-edit2"></i> Edytuj</a>
                                         <?php endif;?>
                                         <a class="dropdown-item" href="?action=pendingOrders&id=<?= $order['order_id']?>"><i class="dw dw-delete-3"></i> Usuń</a>
                                     </div>

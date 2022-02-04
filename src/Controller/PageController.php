@@ -44,6 +44,17 @@ class PageController extends AbstractController
         $this->view->render('addNewOrder', $params ?? []);
     }
 
+    public function editOrderAction() {
+        if($this->request->getParam('id')) {
+            $params['user'] = $this->request->userInfo();
+            $params['orders'] = $this->ordersModel->getOrderById($this->request->getParam('id'));
+            $params['drivers'] = $this->ordersModel->getDriversToOrder();
+            $params['statuses'] = $this->ordersModel->getStatusesToOrder($this->request->getParam('id'));
+
+            $this->view->render('editOrder', $params ?? []);
+        }
+    }
+
     public function pendingOrdersAction() {
 
         if($this->request->getParam('id')) {
@@ -55,19 +66,21 @@ class PageController extends AbstractController
         }
 
         $params['user'] = $this->request->userInfo();
-        $params['orders'] = $this->ordersModel->getPendingOrders();
+        $params['orders'] = $this->ordersModel->getPendingOrders($params['user']['userRole'], $params['user']['userId']);
 
         $this->view->render('pendingOrders', $params ?? []);
     }
 
     public function ordersInProgressAction() {
-        $params['orders'] = $this->ordersModel->getInProgressOrders();
+        $params['user'] = $this->request->userInfo();
+        $params['orders'] = $this->ordersModel->getInProgressOrders($params['user']['userRole'], $params['user']['userId']);
 
         $this->view->render('ordersInProgress', $params ?? []);
     }
 
     public function completedOrdersAction() {
-        $params['orders'] = $this->ordersModel->getCompletedOrders();
+        $params['user'] = $this->request->userInfo();
+        $params['orders'] = $this->ordersModel->getCompletedOrders($params['user']['userRole'], $params['user']['userId']);
 
         $this->view->render('completedOrders', $params ?? []);
     }

@@ -4435,6 +4435,7 @@ a.badge-dark.focus, a.badge-dark:focus {
   transform: translate(-50%, -50%);
   color: #155724;
   background-color: #d4edda;
+  z-index: 10000;
   border-color: #c3e6cb; }
 
 .alert-success hr {

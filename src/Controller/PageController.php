@@ -8,6 +8,114 @@ class PageController extends AbstractController
         $this->view->render('dashboard');
     }
 
+    public function chatAction() {
+        $this->view->render('chat');
+    }
+
+    public function addContractorAction() {
+        if($this->request->hasPost()) {
+            $addParams = [
+              'firstname' => $this->request->postParam('contractor_firstname'),
+              'lastname' => $this->request->postParam('contractor_lastname'),
+                'password' => $this->request->postParam('contractor_password'),
+                'login' => $this->request->postParam('contractor_login')
+            ];
+            $this->contractorsModel->addContractor($addParams);
+
+            $params[] = ['success' => 'Pomyślnie dodano kontrahenta !'];
+        }
+
+        $this->view->render('addContractor', $params ?? []);
+    }
+
+    public function contractorsAction() {
+        if($this->request->getParam('id')) {
+            $this->contractorsModel->deleteContractor($this->request->getParam('id'));
+            $params[] = ['success' => 'Pomyślnie usunięto kontrahenta !'];
+        }
+
+        $params['contractors'] = $this->contractorsModel->getContractors();
+
+        $this->view->render('contractors', $params ?? []);
+    }
+
+    public function addCarAction() {
+        if($this->request->hasPost()) {
+            $paramsToAddCar = [
+                'brand' => $this->request->postParam('car_brand'),
+                'model' => $this->request->postParam('car_model'),
+                'plate' => $this->request->postParam('car_plate'),
+            ];
+            $this->carsModel->addCar($paramsToAddCar);
+            $params[] = ['success' => 'Pomyślnie dodano auto!'];
+        }
+
+        $this->view->render('addCar', $params ?? []);
+    }
+
+    public function vehiclesAction() {
+
+        if($this->request->getParam('id')) {
+            $this->carsModel->deleteCar($this->request->getParam('id'));
+
+            $params[] = ['success' => 'Pomyślnie usunięto auto!'];
+        }
+
+        $params['cars'] = $this->carsModel->getCars();
+        $this->view->render('vehicles', $params ?? []);
+    }
+
+    public function addDriverAction() {
+
+        if($this->request->hasPost()) {
+            $addDriverParams = [
+                'firstname' => $this->request->postParam('drivers_firstname'),
+                'lastname' => $this->request->postParam('drivers_lastname'),
+                'login' => $this->request->postParam('drivers_login'),
+                'password' => md5($this->request->postParam('drivers_password')),
+                'car' => (int)$this->request->postParam('drivers_car'),
+            ];
+
+            $this->driversModel->createDriver($addDriverParams);
+
+            $params[] = ['success' => 'Pomyślnie utworzono kierowce!'];
+        }
+
+        $params['cars'] = $this->driversModel->getCars();
+
+        $this->view->render('addDriver', $params ?? []);
+    }
+
+    public function editDriverAction() {
+
+        if($this->request->hasPost()) {
+            $editParams = [
+                'newCar' => $this->request->postParam('driver_car'),
+                'userId' => $this->request->getParam('id')
+            ];
+
+            $this->driversModel->updateDriver($editParams);
+
+            $params[] = ['success' => 'Pomyślnie edytowano kierowce!'];
+        }
+
+        $params['driver'] = $this->driversModel->getDriverById((int)$this->request->getParam('id'));
+        $this->view->render('editDriver', $params ?? []);
+    }
+
+    public function driversAction() {
+        if($this->request->getParam('id')) {
+            $this->driversModel->deleteDriver($this->request->getParam('id'));
+            $params[] = [
+                'success' => 'Pomyślnie usunięto użytkownika!'
+            ];
+        }
+
+        $params['drivers'] = $this->driversModel->getDrivers();
+
+        $this->view->render('drivers', $params ?? []);
+    }
+
     public function addNewOrderAction() {
 
         $result = $this->ordersModel->getDataForNewOrder($this->request->getUserId());

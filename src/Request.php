@@ -29,7 +29,7 @@ class Request
     }
 
     public function getUserId(): int {
-        return (int)$this->userInfo('userId');
+        return (int)$this->userInfo()['userId'];
     }
 
     public function isAuthenticated(): bool

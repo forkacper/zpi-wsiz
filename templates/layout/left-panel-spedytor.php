@@ -40,11 +40,11 @@
                         <span class="micon dw dw-conference"></span><span class="mtext">Kontrahenci</span>
                     </a>
                 </li>
-                <li>
-                    <a href="?action=chat" class="dropdown-toggle no-arrow">
-                        <span class="micon dw dw-chat-3"></span><span class="mtext">Czat</span>
-                    </a>
-                </li>
+<!--                <li>-->
+<!--                    <a href="?action=chat" class="dropdown-toggle no-arrow">-->
+<!--                        <span class="micon dw dw-chat-3"></span><span class="mtext">Czat</span>-->
+<!--                    </a>-->
+<!--                </li>-->
             </ul>
         </div>
     </div>

@@ -13,7 +13,14 @@
                         <ul>
                             <li>
                                 <a href="#">
-                                    <img src="vendors/images/img.jpg" alt="">
+                                    <img src="../../public/images/awatar1.png" alt="">
+                                    <h3>John Doe</h3>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed...</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="../../public/images/awatar24.png" alt="">
                                     <h3>John Doe</h3>
                                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed...</p>
                                 </a>
@@ -27,7 +34,7 @@
             <div class="dropdown">
                 <a class="dropdown-toggle" href="#" role="button" data-toggle="dropdown">
 						<span class="user-icon">
-							<img src="vendors/images/photo1.jpg" alt="">
+							<img src="../../public/images/awatar5.png" alt="">
 						</span>
                     <span class="user-name"><?= $_SESSION['userFullName'] ?></span>
                 </a>

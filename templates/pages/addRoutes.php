@@ -30,6 +30,6 @@
                 <input class="form-control" name="routes_number" type="text">
             </div>
         </div>
-        <button type="submit" class="btn btn-primary">Utwórz ładunek</button>
+        <button type="submit" class="btn btn-primary">Utwórz trasę</button>
     </form>
 </div>

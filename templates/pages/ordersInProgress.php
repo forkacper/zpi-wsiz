@@ -34,7 +34,7 @@
                                 <i class="dw dw-more"></i>
                             </a>
                             <div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
-                                <a class="dropdown-item" href="?action=editOrder"><i class="dw dw-edit2"></i> Edytuj</a>
+                                <a class="dropdown-item" href="?action=editOrder&id=<?= $order['order_id']?>"><i class="dw dw-edit2"></i> Edytuj</a>
                             </div>
                         </div>
                     </td>

@@ -117,7 +117,6 @@ class PageController extends AbstractController
     }
 
     public function addNewOrderAction() {
-
         $result = $this->ordersModel->getDataForNewOrder($this->request->getUserId());
         $params = $result;
 
@@ -144,9 +143,8 @@ class PageController extends AbstractController
                 $this->ordersModel->createOrder($orderParams, $this->request->getUserId());
 
                 $params[] = [
-                    'success' => 'Pomyślnie utworzono trasę!'
+                    'success' => 'Pomyślnie utworzono zlecenie!'
                 ];
-                    $this->view->render('pendingOrders', $params ?? []);
             }
         }
         $this->view->render('addNewOrder', $params ?? []);
@@ -247,7 +245,6 @@ class PageController extends AbstractController
                 $params[] = [
                     'success' => 'Pomyślnie utworzono trasę!'
                 ];
-                $this->view->render('routes', $params ?? []);
             }
         }
 
@@ -284,7 +281,6 @@ class PageController extends AbstractController
                 $params[] = [
                     'success' => 'Pomyślnie utworzono ładunek!'
                 ];
-                $this->view->render('loads', $params ?? []);
             }
         }
         $this->view->render('addLoads', $params ?? []);
